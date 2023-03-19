@@ -64,10 +64,24 @@ developing your own process.
 
   - How I debugged:
 
+  When I tried to add a new I got no response, the console indicated that there was a server error of status 500
+
+  On the terminal for the rails server, it stated that there was a nameError in the create method in the ToyController. The className was written as Toys instead of Toy.
+
 - Update the number of likes for a toy
 
   - How I debugged:
 
+  On pressing the like button and going to the console, i found a SyntaxError stating, "Unexpected end of JSON input
+
+  The rails server terminal stated an unpermitted parameter: :id and showed a status of 204 with No Content. This indicates that the server was not returning any JSON data. The error was at the update method of the toys_controller. I fixed it by adding a render json to the method
+
 - Donate a toy to Goodwill (and delete it from our database)
 
   - How I debugged:
+
+  On pressing the Donate button and going to console, i got a status 404 (not found) error
+
+  The rails server terminal stated
+  ActionController::RoutingError (No route matches [DELETE]).
+  Thus I went to routes and updated it so that it would have a destroy action
